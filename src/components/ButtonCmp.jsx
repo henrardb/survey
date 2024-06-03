@@ -1,7 +1,8 @@
 import React from "react";
+import "../css/ButtonCmp.css";
 
-function ButtonCmp() {
-  return <Button></Button>;
+function ButtonCmp({ value }) {
+  return <button value={value}>{value}</button>;
 }
 
 export default ButtonCmp;

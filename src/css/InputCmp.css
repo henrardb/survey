@@ -1,0 +1,10 @@
+input {
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 2rem;
+}
+
+input:focus {
+  background-color: lightblue;
+  border: 3px solid blue;
+}
