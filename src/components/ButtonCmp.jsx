@@ -1,7 +1,7 @@
 import React from "react";
 
-function Button() {
+function ButtonCmp() {
   return <Button></Button>;
 }
 
-export default Button;
+export default ButtonCmp;

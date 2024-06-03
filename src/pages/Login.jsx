@@ -1,10 +1,10 @@
 import React from "react";
-import Login from "../components/Login";
+import LoginCmp from "../components/LoginCmp";
 
 function Login() {
   return (
     <div>
-      <Login />
+      <LoginCmp />
     </div>
   );
 }

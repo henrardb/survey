@@ -1,10 +1,10 @@
 import React from "react";
-import Register from "../components/Register";
+import RegisterCmp from "../components/RegisterCmp";
 
 function Register() {
   return (
     <div>
-      <Register />
+      <RegisterCmp />
     </div>
   );
 }

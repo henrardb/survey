@@ -1,10 +1,10 @@
 import React from "react";
 
-function Input(type = "text", label) {
+function InputCmp(type = "text", label) {
   return (
     <input type={type} label={label}>
       {label}
     </input>
   );
 }
-export default Input;
+export default InputCmp;

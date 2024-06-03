@@ -1,10 +1,13 @@
 import "./App.css";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <h1>Survey</h1>
-    </>
+    <div>
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 
