@@ -12,13 +12,61 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
-  createAccount() {}
+  async createAccount({ lastName, email, password }) {
+    try {
+      const userAccount = await this.account.create(
+        ID.unique(),
+        email,
+        password,
+        lastName
+      );
+      if (userAccount) {
+        return this.login({ email, password });
+      }
+    } catch (error) {
+      console.log("AuthService :: createAccount :: ", error);
+    }
+  }
 
-  getCurrentUser() {}
+  async login({ email, password }) {
+    try {
+      const userSession = await this.account.createEmailPasswordSession(
+        email,
+        password
+      );
+      console.log(email, password);
+      return userSession;
+    } catch (error) {
+      console.log("AuthService :: login :: ", error);
+      console.log(email, password);
+    }
+  }
 
-  login(email, password) {}
+  async getCurrentUser() {
+    try {
+      const user = await this.account.get();
+      return user;
+    } catch (error) {
+      console.log("AuthService :: getCurrentUser :: ", error);
+    }
+  }
 
-  logout() {}
+  async getSession() {
+    try {
+      const sessionList = this.account.listSessions();
+      return sessionList;
+    } catch (error) {
+      console.log("AuthService :: getSession :: ", error);
+    }
+  }
+
+  async logout() {
+    try {
+      await this.account.deleteSessions();
+    } catch (error) {
+      console.log("AuthService :: logout :: ", error);
+    }
+  }
 }
 
 const authService = new AuthService();
