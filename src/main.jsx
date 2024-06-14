@@ -11,7 +11,6 @@ import store from "./store/store.js";
 import { Provider } from "react-redux";
 
 import App from "./App.jsx";
-import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
@@ -21,14 +20,14 @@ import EditQuestion from "./pages/EditQuestion.jsx";
 import ShowQuestion from "./pages/ShowQuestion.jsx";
 
 import AllEvents from "./pages/AllEvents.jsx";
-import Event from "./pages/Event.jsx";
+import Event from "./components/Event.jsx";
 
 import Participate from "./pages/Participate.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/home" element={<Home />} />
+      <Route path="/all-events" element={<AllEvents />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
 

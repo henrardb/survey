@@ -34,11 +34,9 @@ export class AuthService {
         email,
         password
       );
-      console.log(email, password);
       return userSession;
     } catch (error) {
       console.log("AuthService :: login :: ", error);
-      console.log(email, password);
     }
   }
 

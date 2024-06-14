@@ -14,9 +14,9 @@ function Header() {
 
   const navMenu = [
     {
-      name: "Home",
-      path: "/home",
-      active: true,
+      name: "All Events",
+      path: "/all-events",
+      active: authStatus,
     },
     {
       name: "S'inscrire",
@@ -27,6 +27,11 @@ function Header() {
       name: "Se connecter",
       path: "/login",
       active: !authStatus,
+    },
+    {
+      name: "Evènements",
+      path: "/all-events",
+      active: authStatus,
     },
   ];
   return (
