@@ -32,7 +32,17 @@ export class DbService {
 
   async getEvent(eventId) {}
 
-  async getEvents(query) {}
+  async getEvents(userId) {
+    try {
+      return await this.database.listDocuments(
+        conf.appwriteDbId,
+        conf.appwriteEventId,
+        [Query.equal("userId", userId)]
+      );
+    } catch (error) {
+      console.log("DbService :: getEvents() :: ", error);
+    }
+  }
 
   async deleteEvent(eventId) {}
 }

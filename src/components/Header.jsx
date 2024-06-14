@@ -10,7 +10,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  console.log("Header :: authStatus :: ", authStatus);
+  //console.log("Header :: authStatus :: ", authStatus);
 
   const navMenu = [
     {
@@ -45,15 +45,18 @@ function Header() {
               </li>
             )
         )}
-        <li>
-          <button
-            onClick={() => {
-              authService.logout().then(dispatch(reduxLogout()));
-            }}
-          >
-            Se déconnecter
-          </button>
-        </li>
+        {authStatus && (
+          <li>
+            <button
+              onClick={() => {
+                authService.logout().then(dispatch(reduxLogout()));
+                navigate("/");
+              }}
+            >
+              Se déconnecter
+            </button>
+          </li>
+        )}
       </ul>
     </div>
   );

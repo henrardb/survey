@@ -1,9 +1,9 @@
 import React from "react";
 
-function Event() {
+function Event({ name }) {
   return (
     <div>
-      <h1>Event</h1>
+      <h1>Event: {name}</h1>
     </div>
   );
 }
