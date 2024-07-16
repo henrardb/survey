@@ -31,7 +31,7 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
 
-      <Route path="all-questions" element={<AllQuestions />} />
+      <Route path="all-questions/:eventId" element={<AllQuestions />} />
       <Route path="ask-question" element={<AskQuestion />} />
       <Route path="edit-question/:questionId" element={<EditQuestion />} />
       <Route path="show-question/:questionID" element={<ShowQuestion />} />

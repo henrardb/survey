@@ -14,6 +14,7 @@ export class DbService {
     this.database = new Databases(this.client);
   }
 
+  // Events
   async createEvent({ name, userId }) {
     try {
       console.log(conf.appwriteDbId, conf.appwriteEventId, userId);
@@ -45,6 +46,20 @@ export class DbService {
   }
 
   async deleteEvent(eventId) {}
+
+  // Questions
+  async createQuestion({ title, answers, eventID }) {
+    try {
+      return await this.database.createDocument(
+        conf.appwriteDbId,
+        conf.appwriteQuestionId,
+        ID.unique(),
+        { title, answers, eventId }
+      );
+    } catch (error) {
+      console.log("DbService :: createQuestions() :: ", error);
+    }
+  }
 }
 
 const dbService = new DbService();

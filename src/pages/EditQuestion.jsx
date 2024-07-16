@@ -3,7 +3,7 @@ import React from "react";
 function EditQuestion() {
   return (
     <div>
-      <h1>EditQuestion</h1>
+      <h1>Editer une question</h1>
     </div>
   );
 }
