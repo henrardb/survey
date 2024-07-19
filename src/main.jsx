@@ -33,8 +33,8 @@ const router = createBrowserRouter(
 
       <Route path="all-questions/:eventId" element={<AllQuestions />} />
       <Route path="ask-question" element={<AskQuestion />} />
-      <Route path="edit-question/:questionId" element={<EditQuestion />} />
-      <Route path="show-question/:questionID" element={<ShowQuestion />} />
+      <Route path="edit-question/:questionId?" element={<EditQuestion />} />
+      <Route path="show-question/:questionId" element={<ShowQuestion />} />
 
       <Route path="all-events" element={<AllEvents />} />
       <Route path="event/:eventId" element={<Event />} />

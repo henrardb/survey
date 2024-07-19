@@ -48,7 +48,7 @@ export class DbService {
   async deleteEvent(eventId) {}
 
   // Questions
-  async createQuestion({ title, answers, eventID }) {
+  async createQuestion({ title, answers, eventId }) {
     try {
       return await this.database.createDocument(
         conf.appwriteDbId,
@@ -58,6 +58,14 @@ export class DbService {
       );
     } catch (error) {
       console.log("DbService :: createQuestions() :: ", error);
+    }
+  }
+
+  async getQuestion({ questionId }) {
+    try {
+      // Implement get question with questionId
+    } catch (error) {
+      console.log("DbService :: getQuestion() :: ", error);
     }
   }
 }

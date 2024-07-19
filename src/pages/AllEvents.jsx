@@ -34,7 +34,7 @@ function AllEvents() {
     try {
       const event = await dbService.createEvent({ name, userId });
       if (event) {
-        // Set current event in redux
+        // TODO: Set current event in redux
         navigate(`/all-questions/${event.$id}`);
       }
     } catch (error) {
