@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import QuestionFormCmp from "../components/QuestionFormCmp";
 
@@ -21,7 +21,7 @@ function EditQuestion() {
 
   return (
     <div>
-      {questionId ? (
+      {!questionId ? (
         <>
           <h1>Nouvelle question: {questionId}</h1>
           <QuestionFormCmp />

@@ -57,7 +57,20 @@ export class DbService {
         { title, answers, eventId }
       );
     } catch (error) {
-      console.log("DbService :: createQuestions() :: ", error);
+      console.log("DbService :: createQuestion() :: ", error);
+    }
+  }
+
+  async updateQuestion({ $id, title, answers }) {
+    try {
+      return await this.database.createDocument(
+        conf.appwriteDbId,
+        conf.appwriteQuestionId,
+        $id,
+        { title, answers }
+      );
+    } catch (error) {
+      console.log("DbService :: updateQuestion() :: ", error);
     }
   }
 

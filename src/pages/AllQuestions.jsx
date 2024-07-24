@@ -12,7 +12,7 @@ function AllQuestions() {
       <h1>Event: {eventId}</h1>
       <Button
         value="Nouvelle question"
-        onClick={() => navigate("edit-question/:questionId")}
+        onClick={() => navigate("/edit-question")}
       ></Button>
       <div>Liste des questions</div>
     </div>
